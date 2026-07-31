@@ -1,0 +1,26 @@
+{
+  "account_id": "012751250391",
+  "environment_name": "PROD",
+  "task_definition": {
+    "cpu": "1024",
+    "memory": "2048",
+    "environments": {
+      "PORT": "8080"
+    },
+    "secrets": {}
+  },
+  "service": {
+    "desired_count": 2,
+    "min_capacity": 2,
+    "max_capacity": 128,
+    "capacity_provider": {
+      "spot_weight": 80,
+      "ondemand_weight": 20,
+      "base": 1
+    }
+  },
+  "tags": {
+    "project": "ppc-ecommerce",
+    "service": "ppc-ecommerce-payment-service"
+  }
+}
