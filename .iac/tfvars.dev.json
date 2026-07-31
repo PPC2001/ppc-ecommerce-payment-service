@@ -13,6 +13,7 @@
     "desired_count": 1,
     "min_capacity": 1,
     "max_capacity": 4,
+    "health_check_path": "/ppc-ecommerce-payment-service/actuator/health",
     "capacity_provider": {
       "spot_weight": 0,
       "ondemand_weight": 100,
