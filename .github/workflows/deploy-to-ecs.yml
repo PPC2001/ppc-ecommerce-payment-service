@@ -43,7 +43,7 @@ jobs:
         run: mvn clean install -DskipTests
         working-directory: ppc-ecommerce-common-sdk
 
-      - name: Build with Maven
+      - name: Build Payment Service JAR
         run: mvn clean package -DskipTests
 
   deploy-to-ecs:
@@ -72,6 +72,9 @@ jobs:
       - name: Build & Install Common SDK
         run: mvn clean install -DskipTests
         working-directory: ppc-ecommerce-common-sdk
+
+      - name: Build Payment Service JAR
+        run: mvn clean package -DskipTests
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
