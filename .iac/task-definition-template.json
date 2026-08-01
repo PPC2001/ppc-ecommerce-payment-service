@@ -22,14 +22,16 @@
       ],
       "environment": [
         { "name": "SPRING_PROFILES_ACTIVE", "value": "${SPRING_PROFILES_ACTIVE}" },
-        { "name": "PORT", "value": "${PORT}" }
+        { "name": "PORT", "value": "${PORT}" },
+        { "name": "GIT_COMMIT_HASH", "value": "${GIT_COMMIT_HASH}" }
       ],
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
           "awslogs-group": "/ecs/${TASK_FAMILY}",
           "awslogs-region": "${AWS_REGION}",
-          "awslogs-stream-prefix": "ecs"
+          "awslogs-stream-prefix": "ecs",
+          "awslogs-create-group": "true"
         }
       }
     }
