@@ -8,3 +8,4 @@ target/
 *.md
 resources.yml
 Dockerfile
+settings.xml

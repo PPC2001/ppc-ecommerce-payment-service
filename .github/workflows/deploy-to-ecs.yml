@@ -40,11 +40,17 @@ jobs:
           path: ppc-ecommerce-common-sdk
 
       - name: Build & Install Common SDK
-        run: mvn clean install -DskipTests
+        run: mvn clean install -DskipTests --settings settings.xml
         working-directory: ppc-ecommerce-common-sdk
+        env:
+          GITHUB_ACTOR: ${{ github.actor }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run Tests & Build Payment Service JAR
-        run: mvn clean package
+        run: mvn clean package --settings settings.xml
+        env:
+          GITHUB_ACTOR: ${{ github.actor }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   deploy-to-ecs:
     name: Deploy to AWS ECS
@@ -70,11 +76,17 @@ jobs:
           path: ppc-ecommerce-common-sdk
 
       - name: Build & Install Common SDK
-        run: mvn clean install -DskipTests
+        run: mvn clean install -DskipTests --settings settings.xml
         working-directory: ppc-ecommerce-common-sdk
+        env:
+          GITHUB_ACTOR: ${{ github.actor }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build Payment Service JAR
-        run: mvn clean package -DskipTests
+        run: mvn clean package -DskipTests --settings settings.xml
+        env:
+          GITHUB_ACTOR: ${{ github.actor }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
