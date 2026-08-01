@@ -35,7 +35,7 @@
         <dependency>
             <groupId>com.ppc.ecommerce</groupId>
             <artifactId>ppc-ecommerce-common-sdk</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </dependency>
 
         <!-- Spring Boot Web -->
