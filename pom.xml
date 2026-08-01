@@ -19,6 +19,17 @@
         <java.version>21</java.version>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>github</id>
+            <name>GitHub PPC2001 Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/PPC2001/ppc-ecommerce-common-sdk</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
     <dependencies>
         <!-- Common Domain SDK -->
         <dependency>
