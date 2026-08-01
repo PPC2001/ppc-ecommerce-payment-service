@@ -1,0 +1,10 @@
+.git
+.gitignore
+target/
+.idea
+.vscode
+*.log
+.iac/
+*.md
+resources.yml
+Dockerfile

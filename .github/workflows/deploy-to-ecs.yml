@@ -43,8 +43,8 @@ jobs:
         run: mvn clean install -DskipTests
         working-directory: ppc-ecommerce-common-sdk
 
-      - name: Build Payment Service JAR
-        run: mvn clean package -DskipTests
+      - name: Run Tests & Build Payment Service JAR
+        run: mvn clean package
 
   deploy-to-ecs:
     name: Deploy to AWS ECS

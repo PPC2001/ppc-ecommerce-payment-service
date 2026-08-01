@@ -2,8 +2,11 @@ FROM eclipse-temurin:21-jre
 
 WORKDIR /app
 
-COPY target/*.jar app.jar
+# Non-root user security practice
+USER nobody
+
+COPY target/*.jar service.jar
 
 EXPOSE 8083 8080
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "service.jar"]
